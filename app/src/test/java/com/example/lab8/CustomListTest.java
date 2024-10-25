@@ -26,7 +26,23 @@ public class CustomListTest {
 
     }
     @Test
-    public void testHasCity(){
-        assertTrue(list.hasCity(new City("Halifax", "NS")));
+    public void hasCityTest() {
+        list = createList();
+
+        // Create a test city
+        City testCity = new City("Halifax", "NS");
+
+        // Initially the list should not have the city
+        assertFalse(list.hasCity(testCity));
+
+        // Add the city
+        list.addCity(testCity);
+
+        // Now the list should have the city
+        assertTrue(list.hasCity(testCity));
+
+        // Test with a different city that's not in the list
+        City anotherCity = new City("Toronto", "ON");
+        assertFalse(list.hasCity(anotherCity));
     }
 }
