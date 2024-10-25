@@ -48,10 +48,21 @@ public class CustomListTest {
 
     @Test
     public void deleteCityTest(){
+
         list = createList();
+        // Create a test city
         City cityToDelete = new City("Edmonton", "AB");
-        list.deleteCity(cityToDelete);
-        //list.deleteCity(cityToDelete);
+
+        // Add the city to the list
+        list.addCity(cityToDelete);
+
+        // Now the list should have the city
         assertTrue(list.hasCity(cityToDelete));
+
+        // Delete the city
+        list.deleteCity(cityToDelete);
+
+        // Now the list should not have the city
+        assertFalse(list.hasCity(cityToDelete));
     }
 }
