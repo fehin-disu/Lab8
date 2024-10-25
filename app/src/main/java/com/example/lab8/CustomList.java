@@ -62,4 +62,9 @@ public class CustomList extends ArrayAdapter<City> {
         }
     }
 
+    public boolean countCities(){
+        return false;
+
+    }
+
 }

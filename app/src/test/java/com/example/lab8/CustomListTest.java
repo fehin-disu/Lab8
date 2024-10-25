@@ -65,4 +65,12 @@ public class CustomListTest {
         // Now the list should not have the city
         assertFalse(list.hasCity(cityToDelete));
     }
+
+    @Test
+    public void countCityTest(){
+        list = createList();
+        list.addCity(new City("Halifax", "NS"));
+        assertEquals(1, list.countCities());
+
+    }
 }
